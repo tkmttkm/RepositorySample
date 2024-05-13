@@ -1,0 +1,46 @@
+plugins {
+	id 'java'
+	id 'war'
+	id 'org.springframework.boot' version '3.2.5'
+	id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	runtimeOnly 'com.mysql:mysql-connector-j'
+	annotationProcessor 'org.projectlombok:lombok'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
+    implementation 'org.hibernate:hibernate-core:5.4.24.Final'
+    implementation 'javax.persistence:javax.persistence-api:2.2'
+	implementation 'org.springframework.data:spring-data-commons:3.2.0'
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+	//コンソールに取得データや発行したSQLを表示するために使用
+	runtimeOnly 'org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4:1.16'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	//JUnit
+	testImplementation 'org.junit.jupiter:junit-jupiter:5.5.2'
+	
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
