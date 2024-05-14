@@ -22,6 +22,7 @@ import com.example.demo.repository.AbstractRepository;
  * <pre>
  * リポジトリクラス
  * {@code @Autowired}で使用
+ * {@link Entity}クラスとマッピングしている
  * </pre>
  * @author Takumi
  *

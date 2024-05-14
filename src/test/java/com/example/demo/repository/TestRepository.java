@@ -26,7 +26,7 @@ class TestRepository {
 		List<Entity> dataList = repository.findAll();
 		assertEquals(repository.getFindCount(), 4);
 
-		//本来は全ゼータチェックするべきだが、ここではidが２のデータのみ確認
+		//本来は全データチェックするべきだが、ここではidが２のデータのみ確認
 		Entity data_Id2 = dataList.stream().filter(data -> Integer.valueOf(data.getId()) == 2).toList().get(0);
 		assertEquals(data_Id2.getFull_name(), "エンティティ　ティティ");
 		assertEquals(data_Id2.getInsert_date(), 20240418);
