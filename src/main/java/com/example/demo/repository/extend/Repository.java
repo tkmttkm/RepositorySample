@@ -23,6 +23,7 @@ import com.example.demo.repository.AbstractRepository;
  * リポジトリクラス
  * {@code @Autowired}で使用
  * {@link Entity}クラスとマッピングしている
+ * DIコンテナに登録するため必ず{@link org.springframework.stereotype.Repository}を付与
  * </pre>
  * @author Takumi
  *
